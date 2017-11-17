@@ -29,7 +29,7 @@ int main(int argc, char ** argv) {
         } else if (strcmp(argv[1], "apply") == 0) {
             UnifiedFormat format = UnifiedFormat();
             if (argc == 4) {
-                format.apply_patch(argv[2], argv[3]);
+                format.apply_patch(argv[2], argv[3], cout);
             } else if (argc == 5) {
                 ofstream out(argv[4]);
                 format.apply_patch(argv[2], argv[3], out);

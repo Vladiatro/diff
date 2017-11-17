@@ -44,7 +44,7 @@ public:
      * @param patch_file_name
      * @param target stream to output
      */
-    void apply_patch(char *old_file_name, char *patch_file_name, ostream &target = cout) override;
+    void apply_patch(char *old_file_name, char *patch_file_name, ostream &target) override;
 };
 
 

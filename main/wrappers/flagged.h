@@ -16,6 +16,10 @@ public:
         object = o;
         flag = f;
     }
+
+    friend bool operator == (flagged<T> f1, flagged<T> f2) {
+        return f1.object == f2.object && f1.flag == f2.flag;
+    }
 };
 
 #endif //DIFF_FLAGGED_H
