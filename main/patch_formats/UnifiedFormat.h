@@ -36,6 +36,15 @@ class UnifiedFormat : public PatchFormat {
      */
     void output_lines(char *old_file_name, char *new_file_name, vector<FlaggedString> *ordered_diff,
                       ostream &target) override;
+
+public:
+    /**
+     * Applies the difference to the old file and outputs the result.
+     * @param old_file_name
+     * @param patch_file_name
+     * @param target stream to output
+     */
+    void apply_patch(char *old_file_name, char *patch_file_name, ostream &target = cout) override;
 };
 
 

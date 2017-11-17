@@ -2,6 +2,7 @@
 #include <cstring>
 #include <fstream>
 #include "PatchMaker.h"
+#include "patch_formats/UnifiedFormat.h"
 
 using namespace std;
 
@@ -26,7 +27,15 @@ int main(int argc, char ** argv) {
                 help();
             }
         } else if (strcmp(argv[1], "apply") == 0) {
-
+            UnifiedFormat format = UnifiedFormat();
+            if (argc == 4) {
+                format.apply_patch(argv[2], argv[3]);
+            } else if (argc == 5) {
+                ofstream out(argv[4]);
+                format.apply_patch(argv[2], argv[3], out);
+            } else {
+                help();
+            }
         } else {
             help();
         }

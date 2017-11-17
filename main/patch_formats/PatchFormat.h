@@ -25,6 +25,15 @@ public:
      */
     virtual void output_lines(char *old_file_name, char *new_file_name,
                               vector<FlaggedString> *ordered_diff, ostream& target) = 0;
+
+    /**
+     * Applies the patch.
+     * @param old_file_name
+     * @param patch_file_name
+     * @param target
+     */
+    virtual void apply_patch(char *old_file_name, char *patch_file_name,
+                             ostream& target) = 0;
 };
 
 #endif //DIFF_PATCH_FORMAT_H
